@@ -1,0 +1,116 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <!-- A CardView that contains a TextView -->
+    <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_gravity="center"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/my_toolbar"
+        card_view:cardBackgroundColor="@color/colorPrimary">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/img_test"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/bridge"
+                android:scaleType="fitCenter"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dip"/>
+
+            <TextView
+                android:id="@+id/code"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#ffffff"
+                android:layout_below="@id/img_test"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:gravity="center"
+                android:layout_marginTop="6dip"/>
+            <TextView
+                android:id="@+id/desription"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/code"
+                android:textColor="#ffffff"
+                android:textStyle="italic"
+                android:textSize="10dp"
+                android:gravity="center"
+                android:layout_marginTop="6dip"/>
+            <TextView
+                android:id="@+id/created_at"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/desription"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:textSize="10dp"
+                android:gravity="center"
+                android:layout_marginTop="6dip"/>
+            <TextView
+                android:id="@+id/geo_num"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@id/created_at"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:textSize="10dp"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/bg_circle_red"
+                android:layout_marginTop="6dip"
+                android:layout_marginBottom="15dip"/>
+
+            <LinearLayout
+                android:background="@color/bg_bubble_self"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/geo_num">
+
+                <ImageButton
+                    android:id="@+id/geo_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:textColor="@color/colorPrimary"
+                    android:src="@drawable/ic_action_locate"/>
+
+                <ImageButton
+                    android:id="@+id/camera_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:textColor="@color/colorPrimary"
+                    android:src="@drawable/ic_action_camera"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/geoList"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/card_view"/>
+</RelativeLayout>
